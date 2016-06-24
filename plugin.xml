@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com-ezperanto-plugins-ocrcontroller" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>OCRController</name>
+  <js-module name="OCRViewCDVPlugin" src="www/OCRViewCDVPlugin.js">
+      <clobbers target="OCRViewCDVPlugin" />
+  </js-module>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="OCRViewCDVPlugin">
+        <param name="ios-package" value="OCRViewCDVPlugin" />
+      </feature>
+    </config-file>
+    <framework src="src/build/Products/Release-iphoneos/TesseractOCR.framework" custom="true"/>
+    <framework src="Carthage/Checkouts/OpenCV-iOS/opencv2.framework" custom="true"/>
+    <source-file src="src/OCRViewController/OCRViewCDVPlugin.swift" />
+    <source-file src="src/OCRViewController/MRZ.swift" />
+    <source-file src="src/OCRViewController/DocumentCaptureView.swift" />
+    <source-file src="src/OCRViewController/MRZEditViewController.swift" />
+    <source-file src="src/OCRViewController/OCRHelper.swift" />
+    <source-file src="src/OCRViewController/OCRViewController.swift" />
+    <source-file src="src/OCRViewController/CaptureViewController.swift" />
+    <resource-file src="src/OCRViewController/Base.lproj/Main.storyboard" />
+
+    <source-file src="src/OCRViewController/UIImage+Rotate.mm" />
+    <header-file src="src/OCRViewController/UIImage+Rotate.hpp" />
+    <source-file src="src/OCRViewController/UIImage+OpenCV.mm" />
+    <header-file src="src/OCRViewController/UIImage+OpenCV.hpp" />
+    <source-file src="src/OCRViewController/OCRHelperImplementation.mm" />
+    <header-file src="src/OCRViewController/OCRHelperImplementation.hpp" />
+    <resource-file src="src/OCRViewController/tessdata" target="../"/>
+    <resource-file src="src/OCRViewController/Assets.xcassets" />
+  </platform>
+</plugin>

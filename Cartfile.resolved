@@ -1,0 +1,3 @@
+github "Fl0p/OpenCV-iOS" "2.4.8"
+github "gali8/Tesseract-OCR-iOS" "4.0.0"
+github "apache/cordova-ios" "rel/4.2.0"

@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		76309DCE1D1B27F600D8C37E /* MRZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76309DCD1D1B27F600D8C37E /* MRZ.swift */; };
+		763DC83A1D1DB22600850C21 /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 763DC8391D1DB22600850C21 /* libCordova.a */; };
+		766A6EC51D1A3F1500D3138D /* OCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A6EC41D1A3F1500D3138D /* OCRViewController.swift */; };
+		766A6EC91D1A53B900D3138D /* OCRHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A6EC81D1A53B900D3138D /* OCRHelper.swift */; };
+		766A6ECF1D1A543100D3138D /* OCRHelperImplementation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 766A6ECE1D1A543100D3138D /* OCRHelperImplementation.mm */; };
+		766A6ED31D1A54AA00D3138D /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 766A6ED21D1A54AA00D3138D /* UIImage+OpenCV.mm */; };
+		766A6ED61D1A54B900D3138D /* UIImage+Rotate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 766A6ED51D1A54B900D3138D /* UIImage+Rotate.mm */; };
+		766A6EDC1D1A569700D3138D /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 766A6EDB1D1A569700D3138D /* tessdata */; };
+		766A6F001D1A780700D3138D /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 766A6EFB1D1A779200D3138D /* opencv2.framework */; };
+		769786F41D19551E006AE2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769786F31D19551E006AE2E6 /* AppDelegate.swift */; };
+		769786F61D19551E006AE2E6 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769786F51D19551E006AE2E6 /* CaptureViewController.swift */; };
+		769786F91D19551E006AE2E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 769786F71D19551E006AE2E6 /* Main.storyboard */; };
+		769786FB1D19551E006AE2E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 769786FA1D19551E006AE2E6 /* Assets.xcassets */; };
+		769786FE1D19551E006AE2E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 769786FC1D19551E006AE2E6 /* LaunchScreen.storyboard */; };
+		76A24DA81D19D42100C70DE4 /* DocumentCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A24DA71D19D42100C70DE4 /* DocumentCaptureView.swift */; };
+		76E90EF21D1DACF5005FAB7B /* OCRViewCDVPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E90EF01D1D2B07005FAB7B /* OCRViewCDVPlugin.swift */; };
+		76F217211D1C0460001969B5 /* MRZEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F217201D1C0460001969B5 /* MRZEditViewController.swift */; };
+		76FACEC51D1DD351009985B4 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76FACEC41D1DD351009985B4 /* TesseractOCR.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		766A6F021D1A780700D3138D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		76309DCD1D1B27F600D8C37E /* MRZ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRZ.swift; sourceTree = "<group>"; };
+		763DC8391D1DB22600850C21 /* libCordova.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCordova.a; path = "../Carthage/Checkouts/cordova-ios/CordovaLib/build/Debug-iphoneos/libCordova.a"; sourceTree = "<group>"; };
+		766A6EC41D1A3F1500D3138D /* OCRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCRViewController.swift; sourceTree = "<group>"; };
+		766A6EC81D1A53B900D3138D /* OCRHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCRHelper.swift; sourceTree = "<group>"; };
+		766A6ECC1D1A543100D3138D /* OCRViewController-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCRViewController-Bridging-Header.h"; sourceTree = "<group>"; };
+		766A6ECD1D1A543100D3138D /* OCRHelperImplementation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OCRHelperImplementation.hpp; sourceTree = "<group>"; };
+		766A6ECE1D1A543100D3138D /* OCRHelperImplementation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCRHelperImplementation.mm; sourceTree = "<group>"; };
+		766A6ED11D1A54AA00D3138D /* UIImage+OpenCV.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "UIImage+OpenCV.hpp"; sourceTree = "<group>"; };
+		766A6ED21D1A54AA00D3138D /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
+		766A6ED41D1A54B900D3138D /* UIImage+Rotate.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "UIImage+Rotate.hpp"; sourceTree = "<group>"; };
+		766A6ED51D1A54B900D3138D /* UIImage+Rotate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+Rotate.mm"; sourceTree = "<group>"; };
+		766A6EDB1D1A569700D3138D /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = OCRViewController/tessdata; sourceTree = "<group>"; };
+		766A6EFB1D1A779200D3138D /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = "../Carthage/Checkouts/OpenCV-iOS/opencv2.framework"; sourceTree = "<group>"; };
+		769786F01D19551E006AE2E6 /* ORCViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ORCViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		769786F31D19551E006AE2E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		769786F51D19551E006AE2E6 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		769786F81D19551E006AE2E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		769786FA1D19551E006AE2E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		769786FD1D19551E006AE2E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		769786FF1D19551E006AE2E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76A24DA71D19D42100C70DE4 /* DocumentCaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCaptureView.swift; sourceTree = "<group>"; };
+		76E90EF01D1D2B07005FAB7B /* OCRViewCDVPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCRViewCDVPlugin.swift; path = OCRViewController/OCRViewCDVPlugin.swift; sourceTree = "<group>"; };
+		76F217201D1C0460001969B5 /* MRZEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRZEditViewController.swift; sourceTree = "<group>"; };
+		76FACEC41D1DD351009985B4 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TesseractOCR.framework; path = "Build/Products/Release-iphoneos/TesseractOCR.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		769786ED1D19551E006AE2E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76FACEC51D1DD351009985B4 /* TesseractOCR.framework in Frameworks */,
+				763DC83A1D1DB22600850C21 /* libCordova.a in Frameworks */,
+				766A6F001D1A780700D3138D /* opencv2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		766A6EC61D1A534F00D3138D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				76309DCD1D1B27F600D8C37E /* MRZ.swift */,
+				769786F51D19551E006AE2E6 /* CaptureViewController.swift */,
+				76A24DA71D19D42100C70DE4 /* DocumentCaptureView.swift */,
+				766A6EC41D1A3F1500D3138D /* OCRViewController.swift */,
+				769786FC1D19551E006AE2E6 /* LaunchScreen.storyboard */,
+				769786F71D19551E006AE2E6 /* Main.storyboard */,
+				76F217201D1C0460001969B5 /* MRZEditViewController.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		766A6EC71D1A537F00D3138D /* OCR */ = {
+			isa = PBXGroup;
+			children = (
+				766A6EC81D1A53B900D3138D /* OCRHelper.swift */,
+				766A6ECD1D1A543100D3138D /* OCRHelperImplementation.hpp */,
+				766A6ECE1D1A543100D3138D /* OCRHelperImplementation.mm */,
+			);
+			name = OCR;
+			sourceTree = "<group>";
+		};
+		766A6ED01D1A548A00D3138D /* OpenCV */ = {
+			isa = PBXGroup;
+			children = (
+				766A6ED11D1A54AA00D3138D /* UIImage+OpenCV.hpp */,
+				766A6ED21D1A54AA00D3138D /* UIImage+OpenCV.mm */,
+				766A6ED41D1A54B900D3138D /* UIImage+Rotate.hpp */,
+				766A6ED51D1A54B900D3138D /* UIImage+Rotate.mm */,
+			);
+			name = OpenCV;
+			sourceTree = "<group>";
+		};
+		769786E71D19551E006AE2E6 = {
+			isa = PBXGroup;
+			children = (
+				76E90EF01D1D2B07005FAB7B /* OCRViewCDVPlugin.swift */,
+				769786F21D19551E006AE2E6 /* ORCViewController */,
+				766A6EDB1D1A569700D3138D /* tessdata */,
+				769787051D195586006AE2E6 /* Frameworks */,
+				769786F11D19551E006AE2E6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		769786F11D19551E006AE2E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				769786F01D19551E006AE2E6 /* ORCViewController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		769786F21D19551E006AE2E6 /* ORCViewController */ = {
+			isa = PBXGroup;
+			children = (
+				766A6EC61D1A534F00D3138D /* UI */,
+				766A6EC71D1A537F00D3138D /* OCR */,
+				766A6ED01D1A548A00D3138D /* OpenCV */,
+				769786F31D19551E006AE2E6 /* AppDelegate.swift */,
+				769786FA1D19551E006AE2E6 /* Assets.xcassets */,
+				769786FF1D19551E006AE2E6 /* Info.plist */,
+				766A6ECC1D1A543100D3138D /* OCRViewController-Bridging-Header.h */,
+			);
+			name = ORCViewController;
+			path = OCRViewController;
+			sourceTree = "<group>";
+		};
+		769787051D195586006AE2E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76FACEC41D1DD351009985B4 /* TesseractOCR.framework */,
+				763DC8391D1DB22600850C21 /* libCordova.a */,
+				766A6EFB1D1A779200D3138D /* opencv2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		769786EF1D19551E006AE2E6 /* ORCViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 769787021D19551E006AE2E6 /* Build configuration list for PBXNativeTarget "ORCViewController" */;
+			buildPhases = (
+				769786EC1D19551E006AE2E6 /* Sources */,
+				769786ED1D19551E006AE2E6 /* Frameworks */,
+				769786EE1D19551E006AE2E6 /* Resources */,
+				766A6F021D1A780700D3138D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ORCViewController;
+			productName = GPUImageOCR;
+			productReference = 769786F01D19551E006AE2E6 /* ORCViewController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		769786E81D19551E006AE2E6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Mario Scheliga";
+				TargetAttributes = {
+					769786EF1D19551E006AE2E6 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8J9Y963QM6;
+					};
+				};
+			};
+			buildConfigurationList = 769786EB1D19551E006AE2E6 /* Build configuration list for PBXProject "ORCViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 769786E71D19551E006AE2E6;
+			productRefGroup = 769786F11D19551E006AE2E6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				769786EF1D19551E006AE2E6 /* ORCViewController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		769786EE1D19551E006AE2E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				769786FE1D19551E006AE2E6 /* LaunchScreen.storyboard in Resources */,
+				766A6EDC1D1A569700D3138D /* tessdata in Resources */,
+				769786FB1D19551E006AE2E6 /* Assets.xcassets in Resources */,
+				769786F91D19551E006AE2E6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		769786EC1D19551E006AE2E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76E90EF21D1DACF5005FAB7B /* OCRViewCDVPlugin.swift in Sources */,
+				76A24DA81D19D42100C70DE4 /* DocumentCaptureView.swift in Sources */,
+				766A6EC51D1A3F1500D3138D /* OCRViewController.swift in Sources */,
+				766A6ECF1D1A543100D3138D /* OCRHelperImplementation.mm in Sources */,
+				766A6EC91D1A53B900D3138D /* OCRHelper.swift in Sources */,
+				766A6ED31D1A54AA00D3138D /* UIImage+OpenCV.mm in Sources */,
+				769786F61D19551E006AE2E6 /* CaptureViewController.swift in Sources */,
+				766A6ED61D1A54B900D3138D /* UIImage+Rotate.mm in Sources */,
+				76309DCE1D1B27F600D8C37E /* MRZ.swift in Sources */,
+				76F217211D1C0460001969B5 /* MRZEditViewController.swift in Sources */,
+				769786F41D19551E006AE2E6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		769786F71D19551E006AE2E6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				769786F81D19551E006AE2E6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		769786FC1D19551E006AE2E6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				769786FD1D19551E006AE2E6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		769787001D19551E006AE2E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		769787011D19551E006AE2E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		769787031D19551E006AE2E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"/Users/marioscheliga/DEV/byl/OCRViewController/Carthage/Checkouts/OpenCV-iOS/",
+					"$(PROJECT_DIR)/Build/Products/Release-iphoneos",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/**",
+					"/Users/marioscheliga/DEV/byl/OCRViewController/Carthage/Checkouts/OpenCV-iOS/opencv2.framework/Headers/**",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/OCRViewController/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ezperanto.GPUImageOCR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OCRViewController/OCRViewController-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "/Users/marioscheliga/DEV/byl/OCRViewController/Carthage/Checkouts/OpenCV-iOS/**";
+			};
+			name = Debug;
+		};
+		769787041D19551E006AE2E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"/Users/marioscheliga/DEV/byl/OCRViewController/Carthage/Checkouts/OpenCV-iOS/",
+					"$(PROJECT_DIR)/Build/Products/Release-iphoneos",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/**",
+					"/Users/marioscheliga/DEV/byl/OCRViewController/Carthage/Checkouts/OpenCV-iOS/opencv2.framework/Headers/**",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/OCRViewController/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ezperanto.GPUImageOCR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OCRViewController/OCRViewController-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "/Users/marioscheliga/DEV/byl/OCRViewController/Carthage/Checkouts/OpenCV-iOS/**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		769786EB1D19551E006AE2E6 /* Build configuration list for PBXProject "ORCViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				769787001D19551E006AE2E6 /* Debug */,
+				769787011D19551E006AE2E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		769787021D19551E006AE2E6 /* Build configuration list for PBXNativeTarget "ORCViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				769787031D19551E006AE2E6 /* Debug */,
+				769787041D19551E006AE2E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 769786E81D19551E006AE2E6 /* Project object */;
+}

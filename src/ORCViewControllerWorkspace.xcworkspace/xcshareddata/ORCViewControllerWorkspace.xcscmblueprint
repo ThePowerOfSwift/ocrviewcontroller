@@ -1,0 +1,29 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B191E73CD355A8EA7C8CCCDC6B07B6A7DE020437" : 0,
+    "57D45B3DA1863BE7FFCC8D46BF9991746D00C1D0" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2A21BE2B-7B67-481E-AC96-76DFEFC12FA4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B191E73CD355A8EA7C8CCCDC6B07B6A7DE020437" : "OCRViewController\/Carthage\/Checkouts\/Tesseract-OCR-iOS\/",
+    "57D45B3DA1863BE7FFCC8D46BF9991746D00C1D0" : "OCRViewController\/Carthage\/Checkouts\/OpenCV-iOS\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ORCViewControllerWorkspace",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "src\/ORCViewControllerWorkspace.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/github.com\/Fl0p\/OpenCV-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "57D45B3DA1863BE7FFCC8D46BF9991746D00C1D0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/github.com\/gali8\/Tesseract-OCR-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B191E73CD355A8EA7C8CCCDC6B07B6A7DE020437"
+    }
+  ]
+}
