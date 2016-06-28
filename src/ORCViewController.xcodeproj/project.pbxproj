@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7607C5121D22E822002DB107 /* CropperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607C5111D22E822002DB107 /* CropperViewController.swift */; };
+		7607C5181D22E961002DB107 /* AKImageCropperOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607C5141D22E961002DB107 /* AKImageCropperOverlayView.swift */; };
+		7607C5191D22E961002DB107 /* AKImageCropperScollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607C5151D22E961002DB107 /* AKImageCropperScollView.swift */; };
+		7607C51A1D22E961002DB107 /* AKImageCropperTouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607C5161D22E961002DB107 /* AKImageCropperTouchView.swift */; };
+		7607C51B1D22E961002DB107 /* AKImageCropperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607C5171D22E961002DB107 /* AKImageCropperView.swift */; };
+		7607C5211D22E98F002DB107 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607C51D1D22E98F002DB107 /* CGFloat.swift */; };
+		7607C5221D22E98F002DB107 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607C51E1D22E98F002DB107 /* CGRect.swift */; };
+		7607C5231D22E98F002DB107 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607C51F1D22E98F002DB107 /* UIColor.swift */; };
+		7607C5241D22E98F002DB107 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7607C5201D22E98F002DB107 /* UIImage.swift */; };
 		76309DCE1D1B27F600D8C37E /* MRZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76309DCD1D1B27F600D8C37E /* MRZ.swift */; };
 		763DC83A1D1DB22600850C21 /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 763DC8391D1DB22600850C21 /* libCordova.a */; };
 		766A6EC51D1A3F1500D3138D /* OCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A6EC41D1A3F1500D3138D /* OCRViewController.swift */; };
@@ -16,6 +25,7 @@
 		766A6ED61D1A54B900D3138D /* UIImage+Rotate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 766A6ED51D1A54B900D3138D /* UIImage+Rotate.mm */; };
 		766A6EDC1D1A569700D3138D /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 766A6EDB1D1A569700D3138D /* tessdata */; };
 		766A6F001D1A780700D3138D /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 766A6EFB1D1A779200D3138D /* opencv2.framework */; };
+		768D98781D22C1EA0092D2BC /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 768D98771D22C1EA0092D2BC /* TesseractOCR.framework */; };
 		769786F41D19551E006AE2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769786F31D19551E006AE2E6 /* AppDelegate.swift */; };
 		769786F61D19551E006AE2E6 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769786F51D19551E006AE2E6 /* CaptureViewController.swift */; };
 		769786F91D19551E006AE2E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 769786F71D19551E006AE2E6 /* Main.storyboard */; };
@@ -24,7 +34,6 @@
 		76A24DA81D19D42100C70DE4 /* DocumentCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A24DA71D19D42100C70DE4 /* DocumentCaptureView.swift */; };
 		76E90EF21D1DACF5005FAB7B /* OCRViewCDVPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E90EF01D1D2B07005FAB7B /* OCRViewCDVPlugin.swift */; };
 		76F217211D1C0460001969B5 /* MRZEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F217201D1C0460001969B5 /* MRZEditViewController.swift */; };
-		76FACEC51D1DD351009985B4 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76FACEC41D1DD351009985B4 /* TesseractOCR.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +50,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7607C5111D22E822002DB107 /* CropperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropperViewController.swift; sourceTree = "<group>"; };
+		7607C5141D22E961002DB107 /* AKImageCropperOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKImageCropperOverlayView.swift; sourceTree = "<group>"; };
+		7607C5151D22E961002DB107 /* AKImageCropperScollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKImageCropperScollView.swift; sourceTree = "<group>"; };
+		7607C5161D22E961002DB107 /* AKImageCropperTouchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKImageCropperTouchView.swift; sourceTree = "<group>"; };
+		7607C5171D22E961002DB107 /* AKImageCropperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKImageCropperView.swift; sourceTree = "<group>"; };
+		7607C51D1D22E98F002DB107 /* CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		7607C51E1D22E98F002DB107 /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		7607C51F1D22E98F002DB107 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		7607C5201D22E98F002DB107 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		76309DCD1D1B27F600D8C37E /* MRZ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRZ.swift; sourceTree = "<group>"; };
 		763DC8391D1DB22600850C21 /* libCordova.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCordova.a; path = "../Carthage/Checkouts/cordova-ios/CordovaLib/build/Debug-iphoneos/libCordova.a"; sourceTree = "<group>"; };
 		766A6EC41D1A3F1500D3138D /* OCRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCRViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +72,7 @@
 		766A6ED51D1A54B900D3138D /* UIImage+Rotate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+Rotate.mm"; sourceTree = "<group>"; };
 		766A6EDB1D1A569700D3138D /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = OCRViewController/tessdata; sourceTree = "<group>"; };
 		766A6EFB1D1A779200D3138D /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = "../Carthage/Checkouts/OpenCV-iOS/opencv2.framework"; sourceTree = "<group>"; };
+		768D98771D22C1EA0092D2BC /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TesseractOCR.framework; path = "Build/Products/Debug-iphoneos/TesseractOCR.framework"; sourceTree = "<group>"; };
 		769786F01D19551E006AE2E6 /* ORCViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ORCViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		769786F31D19551E006AE2E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		769786F51D19551E006AE2E6 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +83,6 @@
 		76A24DA71D19D42100C70DE4 /* DocumentCaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCaptureView.swift; sourceTree = "<group>"; };
 		76E90EF01D1D2B07005FAB7B /* OCRViewCDVPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCRViewCDVPlugin.swift; path = OCRViewController/OCRViewCDVPlugin.swift; sourceTree = "<group>"; };
 		76F217201D1C0460001969B5 /* MRZEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRZEditViewController.swift; sourceTree = "<group>"; };
-		76FACEC41D1DD351009985B4 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TesseractOCR.framework; path = "Build/Products/Release-iphoneos/TesseractOCR.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,18 +90,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76FACEC51D1DD351009985B4 /* TesseractOCR.framework in Frameworks */,
-				763DC83A1D1DB22600850C21 /* libCordova.a in Frameworks */,
+				768D98781D22C1EA0092D2BC /* TesseractOCR.framework in Frameworks */,
 				766A6F001D1A780700D3138D /* opencv2.framework in Frameworks */,
+				763DC83A1D1DB22600850C21 /* libCordova.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7607C5131D22E944002DB107 /* Cropper */ = {
+			isa = PBXGroup;
+			children = (
+				7607C51C1D22E975002DB107 /* SwiftExtensions */,
+				7607C5141D22E961002DB107 /* AKImageCropperOverlayView.swift */,
+				7607C5151D22E961002DB107 /* AKImageCropperScollView.swift */,
+				7607C5161D22E961002DB107 /* AKImageCropperTouchView.swift */,
+				7607C5171D22E961002DB107 /* AKImageCropperView.swift */,
+			);
+			name = Cropper;
+			sourceTree = "<group>";
+		};
+		7607C51C1D22E975002DB107 /* SwiftExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				7607C51D1D22E98F002DB107 /* CGFloat.swift */,
+				7607C51E1D22E98F002DB107 /* CGRect.swift */,
+				7607C51F1D22E98F002DB107 /* UIColor.swift */,
+				7607C5201D22E98F002DB107 /* UIImage.swift */,
+			);
+			name = SwiftExtensions;
+			sourceTree = "<group>";
+		};
 		766A6EC61D1A534F00D3138D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				7607C5131D22E944002DB107 /* Cropper */,
 				76309DCD1D1B27F600D8C37E /* MRZ.swift */,
 				769786F51D19551E006AE2E6 /* CaptureViewController.swift */,
 				76A24DA71D19D42100C70DE4 /* DocumentCaptureView.swift */,
@@ -91,6 +133,7 @@
 				769786FC1D19551E006AE2E6 /* LaunchScreen.storyboard */,
 				769786F71D19551E006AE2E6 /* Main.storyboard */,
 				76F217201D1C0460001969B5 /* MRZEditViewController.swift */,
+				7607C5111D22E822002DB107 /* CropperViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -153,7 +196,7 @@
 		769787051D195586006AE2E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				76FACEC41D1DD351009985B4 /* TesseractOCR.framework */,
+				768D98771D22C1EA0092D2BC /* TesseractOCR.framework */,
 				763DC8391D1DB22600850C21 /* libCordova.a */,
 				766A6EFB1D1A779200D3138D /* opencv2.framework */,
 			);
@@ -235,14 +278,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				76E90EF21D1DACF5005FAB7B /* OCRViewCDVPlugin.swift in Sources */,
+				7607C5241D22E98F002DB107 /* UIImage.swift in Sources */,
+				7607C51A1D22E961002DB107 /* AKImageCropperTouchView.swift in Sources */,
 				76A24DA81D19D42100C70DE4 /* DocumentCaptureView.swift in Sources */,
 				766A6EC51D1A3F1500D3138D /* OCRViewController.swift in Sources */,
 				766A6ECF1D1A543100D3138D /* OCRHelperImplementation.mm in Sources */,
+				7607C5121D22E822002DB107 /* CropperViewController.swift in Sources */,
 				766A6EC91D1A53B900D3138D /* OCRHelper.swift in Sources */,
+				7607C5221D22E98F002DB107 /* CGRect.swift in Sources */,
+				7607C5231D22E98F002DB107 /* UIColor.swift in Sources */,
 				766A6ED31D1A54AA00D3138D /* UIImage+OpenCV.mm in Sources */,
+				7607C51B1D22E961002DB107 /* AKImageCropperView.swift in Sources */,
 				769786F61D19551E006AE2E6 /* CaptureViewController.swift in Sources */,
 				766A6ED61D1A54B900D3138D /* UIImage+Rotate.mm in Sources */,
+				7607C5211D22E98F002DB107 /* CGFloat.swift in Sources */,
 				76309DCE1D1B27F600D8C37E /* MRZ.swift in Sources */,
+				7607C5191D22E961002DB107 /* AKImageCropperScollView.swift in Sources */,
+				7607C5181D22E961002DB107 /* AKImageCropperOverlayView.swift in Sources */,
 				76F217211D1C0460001969B5 /* MRZEditViewController.swift in Sources */,
 				769786F41D19551E006AE2E6 /* AppDelegate.swift in Sources */,
 			);
@@ -367,6 +419,7 @@
 					"$(PROJECT_DIR)",
 					"/Users/marioscheliga/DEV/byl/OCRViewController/Carthage/Checkouts/OpenCV-iOS/",
 					"$(PROJECT_DIR)/Build/Products/Release-iphoneos",
+					"$(PROJECT_DIR)/Build/Products/Debug-iphoneos",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/**",
@@ -396,6 +449,7 @@
 					"$(PROJECT_DIR)",
 					"/Users/marioscheliga/DEV/byl/OCRViewController/Carthage/Checkouts/OpenCV-iOS/",
 					"$(PROJECT_DIR)/Build/Products/Release-iphoneos",
+					"$(PROJECT_DIR)/Build/Products/Debug-iphoneos",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/**",

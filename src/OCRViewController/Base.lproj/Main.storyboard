@@ -10,7 +10,8 @@
         <!--Navigation Controller-->
         <scene sceneID="MBx-o0-obC">
             <objects>
-                <navigationController id="PbA-wX-6Om" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ywq-bZ-xHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="navcontroller" id="PbA-wX-6Om" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fie-z0-fHP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -19,7 +20,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CGD-Ld-zF8"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ywq-bZ-xHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-944.25" y="-102"/>
         </scene>
@@ -38,7 +38,7 @@
                             <view contentMode="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="4gI-u0-c6G" userLabel="MenuBack">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MTQ-4j-ODa">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.14000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MTQ-4j-ODa">
                                         <rect key="frame" x="100" y="550" width="422" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="418" id="KbT-A3-xZS"/>
@@ -56,6 +56,9 @@
                                                 <include reference="KbT-A3-xZS"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="filterSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="g8J-vt-Lxv"/>
+                                        </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmM-Sg-nZT">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -164,6 +167,7 @@
                     <navigationItem key="navigationItem" id="2ti-9H-OtX"/>
                     <connections>
                         <outlet property="cameraView" destination="Dvt-WX-1KV" id="dh8-sl-O98"/>
+                        <outlet property="filterSlider" destination="MTQ-4j-ODa" id="X1I-iA-Vs8"/>
                         <segue destination="y78-mB-Vwh" kind="show" identifier="showOCR" id="xY9-ll-il0"/>
                     </connections>
                 </viewController>
@@ -454,9 +458,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycS-ys-5ME">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" image="ic_file_download_white_48pt"/>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="732" y="24" width="48" height="48"/>
-                                        </variation>
                                         <connections>
                                             <action selector="closeandSend:" destination="TgV-Am-WaN" eventType="touchUpInside" id="zJD-3P-EYq"/>
                                         </connections>
@@ -468,7 +469,9 @@
                                     <constraint firstItem="Oeg-yI-TlX" firstAttribute="top" secondItem="zKb-Oj-VBN" secondAttribute="top" constant="33" id="AAR-BI-i5t">
                                         <variation key="heightClass=regular-widthClass=regular" constant="24"/>
                                     </constraint>
+                                    <constraint firstItem="ycS-ys-5ME" firstAttribute="top" secondItem="zKb-Oj-VBN" secondAttribute="top" constant="24" id="M1m-Ew-79E"/>
                                     <constraint firstAttribute="height" constant="96" id="VEY-ts-nv9"/>
+                                    <constraint firstAttribute="trailing" secondItem="ycS-ys-5ME" secondAttribute="trailing" constant="20" id="iI2-oQ-Nvd"/>
                                     <constraint firstItem="Oeg-yI-TlX" firstAttribute="leading" secondItem="zKb-Oj-VBN" secondAttribute="leading" constant="24" id="scP-lI-A1Q"/>
                                 </constraints>
                                 <variation key="default">
@@ -480,6 +483,8 @@
                                         <exclude reference="VEY-ts-nv9"/>
                                         <exclude reference="AAR-BI-i5t"/>
                                         <exclude reference="scP-lI-A1Q"/>
+                                        <exclude reference="M1m-Ew-79E"/>
+                                        <exclude reference="iI2-oQ-Nvd"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -491,6 +496,8 @@
                                         <include reference="VEY-ts-nv9"/>
                                         <include reference="AAR-BI-i5t"/>
                                         <include reference="scP-lI-A1Q"/>
+                                        <include reference="M1m-Ew-79E"/>
+                                        <include reference="iI2-oQ-Nvd"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -639,6 +646,6 @@
         <image name="ic_rotate_90_degrees_ccw_white_48pt" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="k9P-mi-NPd"/>
+        <segue reference="CGD-Ld-zF8"/>
     </inferredMetricsTieBreakers>
 </document>

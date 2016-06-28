@@ -156,8 +156,6 @@ class OCRViewController : UIViewController {
         }
     }
     
-    
-    
     @IBAction func recaptureImage(sender: AnyObject?) {
         self.performSegueWithIdentifier("recapture", sender: nil)
     }

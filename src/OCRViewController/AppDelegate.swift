@@ -9,13 +9,25 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, OCRResultDelegate {
 
     var window: UIWindow?
 
+    func onResult(res: NSDictionary) {
+        print("GOT RESULT")
+        print(res.description)
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let rootCtrl: CaptureViewController = UIStoryboard(name: "Main", bundle:nil).instantiateViewControllerWithIdentifier("CaptureViewController") as! CaptureViewController
+        window?.rootViewController = rootCtrl
+        rootCtrl.resultDelegate = self
+        window?.makeKeyAndVisible()
+        //(window?.rootViewController as CaptureViewController).resultDelegate = self
+        
+        
         return true
     }
 

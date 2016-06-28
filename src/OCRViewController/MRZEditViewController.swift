@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-protocol MRZResultDelegate {
-    func onMRZResult(result: MRZ)
-}
-
 class MRZEditViewController : UIViewController {
     
     @IBOutlet var firstNameTF: UITextField!
@@ -20,7 +16,6 @@ class MRZEditViewController : UIViewController {
     @IBOutlet var lastNameTF: UITextField!
     
     var mrz: MRZ?
-    var resultDelegate: MRZResultDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +25,7 @@ class MRZEditViewController : UIViewController {
         super.viewWillAppear(animated)
         self.firstNameTF.text = self.mrz!.firstName
         self.lastNameTF.text = self.mrz!.lastName
-        //self.dayOfBirthTF.text = self.mrz.dateOfBirth
+        self.dayOfBirthTF.text = self.mrz!.dateOfBirth?.description
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -45,10 +40,14 @@ class MRZEditViewController : UIViewController {
     
     @IBAction func closeandSend(sender: AnyObject?) {
         print("close and send back")
-        if(self.resultDelegate != nil) {
-            self.resultDelegate!.onMRZResult(self.mrz!)
+        let shared = SharedData.sharedInstance
+        if(shared.mainDelegate != nil) {
+            shared.mainDelegate?.onResult([
+                "firstName": self.mrz!.firstName,
+                "lastName": self.mrz!.lastName,
+                "dateOfBirth": self.mrz!.dateOfBirth!.description
+            ])
         }
-        
     }
     
     @IBAction func recaptureImage(sender: AnyObject?) {

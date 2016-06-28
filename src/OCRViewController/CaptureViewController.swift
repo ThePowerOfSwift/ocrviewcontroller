@@ -12,8 +12,24 @@ protocol OCRResultDelegate {
     func onResult(result: NSDictionary)
 }
 
-class CaptureViewController: UIViewController, MRZResultDelegate {
+class SharedData {
+    class var sharedInstance: SharedData {
+        struct Static {
+            static var instance: SharedData?
+            static var token: dispatch_once_t = 0
+        }
+        
+        dispatch_once(&Static.token) {
+            Static.instance = SharedData()
+        }
+        return Static.instance!
+    }
+    var mainDelegate: OCRResultDelegate? = nil
+}
+
+class CaptureViewController: UIViewController {
     @IBOutlet var cameraView: DocumentCaptureView!
+    @IBOutlet var filterSlider: UISlider!
     
     private var _image: UIImage?
     private var _feature: CIRectangleFeature?
@@ -27,10 +43,14 @@ class CaptureViewController: UIViewController, MRZResultDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
+        let shared = SharedData.sharedInstance
+        shared.mainDelegate = self.resultDelegate
+        
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
         self.cameraView.start()
     }
+
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
@@ -63,6 +83,7 @@ class CaptureViewController: UIViewController, MRZResultDelegate {
         self.cameraView.torchEnabled = !self.cameraView.torchEnabled
     }
     
+    
     //implement delegates
     func onMRZResult(result: MRZ) {
         if (resultDelegate != nil) {
@@ -76,6 +97,11 @@ class CaptureViewController: UIViewController, MRZResultDelegate {
               ])
             ])
         }
+    }
+    
+    @IBAction func filterSliderChanged(sender: AnyObject) {
+        print("new filter value", self.filterSlider.value)
+        self.cameraView.filterValue = self.filterSlider.value
     }
     
     

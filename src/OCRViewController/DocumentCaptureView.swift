@@ -29,6 +29,7 @@ public enum DocumentCaptureViewImageFilter: Int {
 public class DocumentCaptureView: UIView, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     //MARK: Properties
+    public var filterValue: Float = 0.1
     /// Enables realtime border detection.
     public var borderDetectionEnabled = true
     /// The color of the detection frame.
@@ -292,11 +293,13 @@ public class DocumentCaptureView: UIView, AVCaptureVideoDataOutputSampleBufferDe
     }
     
     private func contrastFilter(image: CIImage) -> CIImage {
-        return CIFilter(name: "CIColorControls", withInputParameters: ["inputContrast":1.1, kCIInputImageKey: image])!.outputImage!
+        let val: Float = self.filterValue + 1
+        return CIFilter(name: "CIColorControls", withInputParameters: ["inputContrast":val, kCIInputImageKey: image])!.outputImage!
     }
     
     private func enhanceFilter(image: CIImage) -> CIImage {
-        return CIFilter(name: "CIColorControls", withInputParameters: ["inputBrightness":0.0, "inputContrast":1.14, "inputSaturation":0.0, kCIInputImageKey: image])!.outputImage!
+        let val: Float = self.filterValue + 1
+        return CIFilter(name: "CIColorControls", withInputParameters: ["inputBrightness":0.0, "inputContrast":val, "inputSaturation":0.0, kCIInputImageKey: image])!.outputImage!
     }
     
     private func biggestRectangle(rectangles: [CIRectangleFeature]) -> CIRectangleFeature? {
@@ -372,6 +375,7 @@ public class DocumentCaptureView: UIView, AVCaptureVideoDataOutputSampleBufferDe
         let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
         var image :CIImage = CIImage(CVPixelBuffer: pixelBuffer!)
         
+        print("caputre output")
         switch self.imageFilter {
         case .BlackAndWhite:
             image = self.contrastFilter(image)
