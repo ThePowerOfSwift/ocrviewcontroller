@@ -112,7 +112,7 @@ class OCRViewController : UIViewController {
     
     //MARK: Actions
     @IBAction private func cropMRZ() {
-        self.sourceImage = OCRHelper.extractMRZ(self.sourceImage!)
+        self.sourceImage = OCRHelper.prepareOCR(self.sourceImage!)
         self.updateDisplay()
     }
     

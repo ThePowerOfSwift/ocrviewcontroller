@@ -10,7 +10,7 @@
         <param name="ios-package" value="OCRViewCDVPlugin" />
       </feature>
     </config-file>
-    <framework src="src/build/Products/Release-iphoneos/TesseractOCR.framework" custom="true"/>
+    <framework src="src/build/Products/Debug-iphoneos/TesseractOCR.framework" custom="true"/>
     <framework src="Carthage/Checkouts/OpenCV-iOS/opencv2.framework" custom="true"/>
     <source-file src="src/OCRViewController/OCRViewCDVPlugin.swift" />
     <source-file src="src/OCRViewController/MRZ.swift" />
@@ -19,7 +19,35 @@
     <source-file src="src/OCRViewController/OCRHelper.swift" />
     <source-file src="src/OCRViewController/OCRViewController.swift" />
     <source-file src="src/OCRViewController/CaptureViewController.swift" />
+
+    <source-file src="src/OCRViewController/ResultViewController.swift" />
     <resource-file src="src/OCRViewController/Base.lproj/Main.storyboard" />
+
+    <source-file src="src/OCRViewController/TOCropViewController/TOCropViewController.m" />
+    <header-file src="src/OCRViewController/TOCropViewController/TOCropViewController.h" />
+
+
+    <source-file src="src/OCRViewController/TOCropViewController/Views/TOCropOverlayView.m" />
+    <header-file src="src/OCRViewController/TOCropViewController/Views/TOCropOverlayView.h" />
+    <source-file src="src/OCRViewController/TOCropViewController/Views/TOCropScrollView.m" />
+    <header-file src="src/OCRViewController/TOCropViewController/Views/TOCropScrollView.h" />
+    <source-file src="src/OCRViewController/TOCropViewController/Views/TOCropToolbar.m" />
+    <header-file src="src/OCRViewController/TOCropViewController/Views/TOCropToolbar.h" />
+    <source-file src="src/OCRViewController/TOCropViewController/Views/TOCropView.m" />
+    <header-file src="src/OCRViewController/TOCropViewController/Views/TOCropView.h" />
+
+    <source-file src="src/OCRViewController/TOCropViewController/Models/TOCropViewControllerTransitioning.m" />
+    <header-file src="src/OCRViewController/TOCropViewController/Models/TOCropViewControllerTransitioning.h" />
+
+    <source-file src="src/OCRViewController/TOCropViewController/Models/TOActivityCroppedImageProvider.m" />
+    <header-file src="src/OCRViewController/TOCropViewController/Models/TOActivityCroppedImageProvider.h" />
+
+    <source-file src="src/OCRViewController/TOCropViewController/Models/TOCroppedImageAttributes.m" />
+    <header-file src="src/OCRViewController/TOCropViewController/Models/TOCroppedImageAttributes.h" />
+
+    <source-file src="src/OCRViewController/TOCropViewController/Models/UIImage+CropRotate.m" />
+    <header-file src="src/OCRViewController/TOCropViewController/Models/UIImage+CropRotate.h" />
+
 
     <source-file src="src/OCRViewController/UIImage+Rotate.mm" />
     <header-file src="src/OCRViewController/UIImage+Rotate.hpp" />

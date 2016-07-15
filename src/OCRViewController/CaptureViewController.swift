@@ -12,6 +12,8 @@ protocol OCRResultDelegate {
     func onResult(result: NSDictionary)
 }
 
+
+
 class SharedData {
     class var sharedInstance: SharedData {
         struct Static {
@@ -27,19 +29,25 @@ class SharedData {
     var mainDelegate: OCRResultDelegate? = nil
 }
 
-class CaptureViewController: UIViewController {
+class CaptureViewController: UIViewController, TOCropViewControllerDelegate {
     @IBOutlet var cameraView: DocumentCaptureView!
     @IBOutlet var filterSlider: UISlider!
     
     private var _image: UIImage?
     private var _feature: CIRectangleFeature?
+    private var _mrz: MRZ?
+    private var _resultText: String?
+    
     var resultDelegate: OCRResultDelegate? = nil
+    var tesseract:G8Tesseract = G8Tesseract(language: "eng")
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.cameraView.setupCameraView()
         self.cameraView.borderDetectionEnabled = true
         self.cameraView.borderDetectionFrameColor = UIColor(red:0.2, green:0.6, blue:0.86, alpha:0.5)
+        //self.cameraView.imageFilter = DocumentCaptureViewImageFilter.BlackAndWhite
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -60,17 +68,141 @@ class CaptureViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print("prepare for seque")
         if segue.identifier == "showOCR" {
+            print("showOCR")
             (segue.destinationViewController as! OCRViewController).sourceImage = self._image
         }
+        
+        if segue.identifier == "showResultText" {
+            let showResultVC = (segue.destinationViewController as! ResultViewController)
+            
+            if(self._mrz != nil) {
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "MM-dd-yyyy"
+                dateFormatter.timeZone = NSTimeZone.localTimeZone()
+                var birthdayStr = ""
+                
+                if(self._mrz!.dateOfBirth != nil) {
+                    birthdayStr = dateFormatter.stringFromDate(self._mrz!.dateOfBirth!)
+                }
+                
+                showResultVC.data = [
+                  "firstName": self._mrz!.firstName,
+                  "lastName": self._mrz!.lastName,
+                  "dateOfBirth": birthdayStr
+                ]
+                
+                showResultVC.text = self._mrz!.firstName + " " + self._mrz!.lastName + " (geb. " + birthdayStr + ")"
+            } else {
+                showResultVC.data = ["text": self._resultText!]
+                showResultVC.text = self._resultText!
+            }
+        }
+        
     }
+    
+
     
     //MARK: Actions
     @IBAction func captureImage(sender: AnyObject?) {
         self.cameraView.captureImage { (image, feature) -> Void in
             self._image = image
+//            self._image = OCRHelperImplementation.prepareOCR(image)
             self._feature = feature
-            self.performSegueWithIdentifier("showOCR", sender: nil)
+            
+            var cropViewController: TOCropViewController = TOCropViewController.init(image: self._image)
+            cropViewController.delegate = self
+            self.presentViewController(cropViewController, animated: true, completion: nil)
         }
+    }
+    
+    func cropViewController(cropViewController: TOCropViewController!, didCropToImage image: UIImage!, withRect cropRect: CGRect, angle: Int) {
+        //self._image = image;
+        self._image = OCRHelperImplementation.prepareOCR(image)
+        let result :String = self.recognizeMRZ(self._image!)
+        self._resultText = result
+        print("scan result", result)
+        let mrz = self.parseMRZ(result)
+        
+        if(mrz == nil) {
+            if(result.characters.count > 5) {
+                //go to showEditText
+                self._resultText = result
+                self.presentedViewController?.dismissViewControllerAnimated(true,completion: {
+                    print("completed")
+                    self.performSegueWithIdentifier("showResultText", sender: nil)
+                })
+            } else {
+                print("Try again quality insufficient!")
+                self.presentedViewController?.dismissViewControllerAnimated(true,completion: nil)
+            }
+            return
+        }
+        
+        if (mrz!.isValid < 0.5) {
+            print("Scan quality insufficient : \(mrz!.isValid)")
+            self.presentedViewController?.dismissViewControllerAnimated(true,completion: nil)
+            return
+        }
+        
+        self._mrz = mrz
+        
+        self.presentedViewController?.dismissViewControllerAnimated(true,completion: {
+            print("completed")
+            self.performSegueWithIdentifier("showResultText", sender: nil)
+        })
+        
+    }
+    
+    private func parseMRZ(text: String) -> MRZ? {
+        // Perform OCR
+        let mrz = MRZ(scan: text, debug: true)
+        print("mrz", mrz)
+        if (mrz.isValid < 0.5) {
+            print("Scan quality insufficient : \(mrz.isValid)")
+            return nil
+        }
+        print("- birthday", mrz.dateOfBirth)
+        print("- firstname", mrz.firstName)
+        print("- lastname", mrz.lastName)
+        
+        return mrz
+        // to editMRZ scene only if found - may be stiff editing text instead of not found
+        //self.performSegueWithIdentifier("showEditMRZ", sender: nil)
+    }
+    
+    private func recognizeMRZ(image: UIImage) -> String {
+        var result:String = ""
+        autoreleasepool {
+            print("setup tesseract")
+            self.tesseract.setVariableValue("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<.", forKey: "tessedit_char_whitelist");
+            
+            self.tesseract.setVariableValue("FALSE", forKey: "x_ht_quality_check")
+            //user_words_suffix           user-words
+            //user_patterns_suffix        user-patterns
+            self.tesseract.setVariableValue("user-words", forKey: "user_words_suffix")
+            self.tesseract.setVariableValue("user-patterns", forKey: "user_patterns_suffix")
+            
+            //Testing OCR optimisations
+            self.tesseract.setVariableValue("FALSE", forKey: "load_system_dawg")
+            self.tesseract.setVariableValue("FALSE", forKey: "load_freq_dawg")
+            self.tesseract.setVariableValue("FALSE", forKey: "load_unambig_dawg")
+            self.tesseract.setVariableValue("FALSE", forKey: "load_punc_dawg")
+            self.tesseract.setVariableValue("FALSE", forKey: "load_number_dawg")
+            self.tesseract.setVariableValue("FALSE", forKey: "load_fixed_length_dawgs")
+            self.tesseract.setVariableValue("FALSE", forKey: "load_bigram_dawg")
+            self.tesseract.setVariableValue("FALSE", forKey: "wordrec_enable_assoc")
+            
+            self.tesseract.image = image
+            print("- Start recognize")
+            self.tesseract.recognize()
+            result = self.tesseract.recognizedText
+
+            print("- recognized", result)
+            
+            //tesseract = nil
+            G8Tesseract.clearCache()
+        }
+        return result
     }
     
     @IBAction func abort(sender: AnyObject) {

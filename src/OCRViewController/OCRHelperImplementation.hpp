@@ -10,6 +10,9 @@
 
 @interface OCRHelperImplementation : NSObject
 
-+ (UIImage*) extractMRZ:(UIImage*) image;
++ (UIImage *) extractMRZ:(UIImage*) image;
++ (UIImage *) prepareOCR:(UIImage*) image;
++ (UIImage *) ocrImage:(UIImage*) image;
++ (UIImage *) swtImage:(UIImage*) image;
 
 @end

@@ -1,6 +1,6 @@
 [submodule "Carthage/Checkouts/OpenCV-iOS"]
 	path = Carthage/Checkouts/OpenCV-iOS
-	url = ssh://git@github.com/Fl0p/OpenCV-iOS.git
+	url = https://github.com/Fl0p/OpenCV-iOS.git
 [submodule "Carthage/Checkouts/Tesseract-OCR-iOS"]
 	path = Carthage/Checkouts/Tesseract-OCR-iOS
-	url = ssh://git@github.com/gali8/Tesseract-OCR-iOS.git
+	url = https://github.com/gali8/Tesseract-OCR-iOS.git

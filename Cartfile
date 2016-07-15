@@ -1,3 +1,4 @@
 github "gali8/Tesseract-OCR-iOS" ~> 4.0.0
 github "Fl0p/OpenCV-iOS" ~> 2.4.8
 github "apache/cordova-ios" ~> 4.2.0
+github "danoli3/ofxiOSBoost" ~> 1.60.0

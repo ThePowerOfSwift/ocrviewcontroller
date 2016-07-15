@@ -375,7 +375,6 @@ public class DocumentCaptureView: UIView, AVCaptureVideoDataOutputSampleBufferDe
         let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
         var image :CIImage = CIImage(CVPixelBuffer: pixelBuffer!)
         
-        print("caputre output")
         switch self.imageFilter {
         case .BlackAndWhite:
             image = self.contrastFilter(image)

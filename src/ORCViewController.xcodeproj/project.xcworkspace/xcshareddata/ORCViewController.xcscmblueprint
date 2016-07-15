@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8D8CF81CA498E52E3D72564483D760C6D2323E76",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "57D45B3DA1863BE7FFCC8D46BF9991746D00C1D0" : 0,
+    "8D8CF81CA498E52E3D72564483D760C6D2323E76" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "84C121B0-DEE6-4ABA-BD39-149337E6D63E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "57D45B3DA1863BE7FFCC8D46BF9991746D00C1D0" : "OCRViewController\/Carthage\/Checkouts\/OpenCV-iOS\/",
+    "8D8CF81CA498E52E3D72564483D760C6D2323E76" : "OCRViewController\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ORCViewController",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "src\/ORCViewController.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Fl0p\/OpenCV-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "57D45B3DA1863BE7FFCC8D46BF9991746D00C1D0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:marsch\/ocrviewcontroller.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8D8CF81CA498E52E3D72564483D760C6D2323E76"
+    }
+  ]
+}

@@ -6,11 +6,15 @@
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Eurostile.ttf">
+            <string>EurostileRegular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="MBx-o0-obC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ywq-bZ-xHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="navcontroller" id="PbA-wX-6Om" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fie-z0-fHP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -20,8 +24,9 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CGD-Ld-zF8"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ywq-bZ-xHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-944.25" y="-102"/>
+            <point key="canvasLocation" x="-1400.25" y="-84"/>
         </scene>
         <!--Capture View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -168,12 +173,13 @@
                     <connections>
                         <outlet property="cameraView" destination="Dvt-WX-1KV" id="dh8-sl-O98"/>
                         <outlet property="filterSlider" destination="MTQ-4j-ODa" id="X1I-iA-Vs8"/>
-                        <segue destination="y78-mB-Vwh" kind="show" identifier="showOCR" id="xY9-ll-il0"/>
+                        <segue destination="TgV-Am-WaN" kind="show" identifier="showEditMRZ" id="7yZ-eW-gTo"/>
+                        <segue destination="Tc8-HP-KDc" kind="show" identifier="showResultText" id="ksV-TG-34r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-205.5" y="-97.5"/>
+            <point key="canvasLocation" x="-684" y="-79.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vPe-C1-zvv">
@@ -421,13 +427,11 @@
                     <connections>
                         <outlet property="capturedView" destination="lKl-2M-O7H" id="wh1-fU-J5k"/>
                         <outlet property="resultLabel" destination="XkR-PQ-UJC" id="cFq-B8-N0Q"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="recapture" id="k9P-mi-NPd"/>
-                        <segue destination="TgV-Am-WaN" kind="show" identifier="showEditMRZ" id="0W3-FC-bxn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NwJ-lM-u89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="624" y="-92.25"/>
+            <point key="canvasLocation" x="-117" y="684.75"/>
         </scene>
         <!--Edit View Controller-->
         <scene sceneID="0Mc-Ha-1hP">
@@ -634,7 +638,146 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DcD-fE-La3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1311.75" y="-92.25"/>
+            <point key="canvasLocation" x="174" y="-477"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="t7d-aD-ZhI">
+            <objects>
+                <viewController id="Tc8-HP-KDc" customClass="ResultViewController" customModule="ORCViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Jo-hY-ztp"/>
+                        <viewControllerLayoutGuide type="bottom" id="RNm-jG-kNy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EJK-97-oOZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="lDF-Zg-9qa" userLabel="MenuBack">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dr-w9-EsR" userLabel="recapture">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" image="ic_photo_camera_white_48pt"/>
+                                        <variation key="widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="62" y="535" width="36" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="recaptureImage:" destination="y78-mB-Vwh" eventType="touchUpInside" id="0tp-Ri-ntM"/>
+                                            <action selector="recaptureImage:" destination="Tc8-HP-KDc" eventType="touchUpInside" id="NyD-bI-HlO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKC-00-q36">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" image="ic_file_download_white_48pt"/>
+                                        <connections>
+                                            <action selector="closeandSend:" destination="Tc8-HP-KDc" eventType="touchUpInside" id="h5q-mF-3tl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.72303340520000003" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="3zW-H0-5x7"/>
+                                    <constraint firstItem="0dr-w9-EsR" firstAttribute="leading" secondItem="lDF-Zg-9qa" secondAttribute="leading" constant="24" id="KGD-xa-xlK"/>
+                                    <constraint firstItem="UKC-00-q36" firstAttribute="top" secondItem="lDF-Zg-9qa" secondAttribute="top" constant="24" id="h3L-L9-dUM"/>
+                                    <constraint firstItem="0dr-w9-EsR" firstAttribute="top" secondItem="lDF-Zg-9qa" secondAttribute="top" constant="33" id="rFP-bT-7jV">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                                    </constraint>
+                                    <constraint firstAttribute="trailing" secondItem="UKC-00-q36" secondAttribute="trailing" constant="20" id="xVL-tB-7gL"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="0dr-w9-EsR"/>
+                                        <exclude reference="UKC-00-q36"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="3zW-H0-5x7"/>
+                                        <exclude reference="KGD-xa-xlK"/>
+                                        <exclude reference="rFP-bT-7jV"/>
+                                        <exclude reference="h3L-L9-dUM"/>
+                                        <exclude reference="xVL-tB-7gL"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="subviews">
+                                        <include reference="0dr-w9-EsR"/>
+                                        <include reference="UKC-00-q36"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="3zW-H0-5x7"/>
+                                        <include reference="KGD-xa-xlK"/>
+                                        <include reference="rFP-bT-7jV"/>
+                                        <include reference="h3L-L9-dUM"/>
+                                        <include reference="xVL-tB-7gL"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSv-8s-cvZ">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="167" id="eoz-6q-fBb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EurostileRegular" family="Eurostile" pointSize="23"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="eoz-6q-fBb"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="eoz-6q-fBb"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.097584082559999993" green="0.1422862194" blue="0.36961137820000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="RNm-jG-kNy" firstAttribute="top" secondItem="lDF-Zg-9qa" secondAttribute="bottom" id="PyH-9N-8jv"/>
+                            <constraint firstItem="NSv-8s-cvZ" firstAttribute="top" secondItem="6Jo-hY-ztp" secondAttribute="bottom" constant="81" id="gfW-II-jEb"/>
+                            <constraint firstItem="NSv-8s-cvZ" firstAttribute="leading" secondItem="EJK-97-oOZ" secondAttribute="leadingMargin" constant="193" id="hE0-n3-Z0K"/>
+                            <constraint firstItem="lDF-Zg-9qa" firstAttribute="leading" secondItem="EJK-97-oOZ" secondAttribute="leadingMargin" constant="-20" id="iuV-ll-ixo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NSv-8s-cvZ" secondAttribute="trailing" constant="192" id="lZH-vF-8vS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lDF-Zg-9qa" secondAttribute="trailing" constant="-20" id="qef-0H-jay"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="lDF-Zg-9qa"/>
+                                <exclude reference="NSv-8s-cvZ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="PyH-9N-8jv"/>
+                                <exclude reference="gfW-II-jEb"/>
+                                <exclude reference="hE0-n3-Z0K"/>
+                                <exclude reference="lZH-vF-8vS"/>
+                                <exclude reference="iuV-ll-ixo"/>
+                                <exclude reference="qef-0H-jay"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="lDF-Zg-9qa"/>
+                                <include reference="NSv-8s-cvZ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="PyH-9N-8jv"/>
+                                <include reference="gfW-II-jEb"/>
+                                <include reference="hE0-n3-Z0K"/>
+                                <include reference="lZH-vF-8vS"/>
+                                <include reference="iuV-ll-ixo"/>
+                                <include reference="qef-0H-jay"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="NSv-8s-cvZ" id="NvE-FB-x7d"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showRecapture" id="HLV-43-utx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bHF-zU-gTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="198" y="201"/>
         </scene>
     </scenes>
     <resources>
@@ -646,6 +789,6 @@
         <image name="ic_rotate_90_degrees_ccw_white_48pt" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CGD-Ld-zF8"/>
+        <segue reference="faw-hT-qQm"/>
     </inferredMetricsTieBreakers>
 </document>
