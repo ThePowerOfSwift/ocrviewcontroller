@@ -129,7 +129,7 @@ class CaptureViewController: UIViewController, TOCropViewControllerDelegate {
                 self._resultText = result
                 self.presentedViewController?.dismissViewControllerAnimated(true,completion: {
                     print("completed")
-                    self.performSegueWithIdentifier("showResultText", sender: nil)
+                    self.closeAndSend()
                 })
             } else {
                 print("Try again quality insufficient!")
@@ -148,9 +148,39 @@ class CaptureViewController: UIViewController, TOCropViewControllerDelegate {
         
         self.presentedViewController?.dismissViewControllerAnimated(true,completion: {
             print("completed")
-            self.performSegueWithIdentifier("showResultText", sender: nil)
+            //send back
+            self.closeAndSend()
+
+            //self.performSegueWithIdentifier("showResultText", sender: nil)
         })
         
+    }
+    
+    func closeAndSend() {
+        var data: NSDictionary = [:]
+        if(self._mrz != nil) {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "MM-dd-yyyy"
+            dateFormatter.timeZone = NSTimeZone.localTimeZone()
+            var birthdayStr = ""
+            
+            if(self._mrz!.dateOfBirth != nil) {
+                birthdayStr = dateFormatter.stringFromDate(self._mrz!.dateOfBirth!)
+            }
+            
+            data = [
+                "firstName": self._mrz!.firstName,
+                "lastName": self._mrz!.lastName,
+                "dateOfBirth": birthdayStr
+            ]
+            
+        } else {
+            data = ["text": self._resultText!]
+        }
+        let shared = SharedData.sharedInstance
+        if(shared.mainDelegate != nil) {
+            shared.mainDelegate?.onResult(data)
+        }
     }
     
     private func parseMRZ(text: String) -> MRZ? {
